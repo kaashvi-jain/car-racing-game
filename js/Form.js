@@ -36,6 +36,7 @@ class Form {
       game.update(0);
       player.updateCount(0);
       Player.reset();
+      Player.updatecarsatend(0);
     })
     
   }

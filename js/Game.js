@@ -46,7 +46,8 @@ class Game {
     form.hide();
 
     Player.getPlayerInfo();
-    
+    player.getcarsatend();
+
     if(allPlayers !== undefined){
       //var display_position = 100;
       background("grey");
@@ -70,7 +71,9 @@ class Game {
         cars[index-1].y = y;
 
         if (index === player.index){
-          cars[index - 1].shapeColor = "red";
+         fill ("blue");
+         stroke(10);
+         ellipse(x,y,80,100)
           camera.position.x = displayWidth/2;
           camera.position.y = cars[index-1].y
         }
@@ -87,12 +90,15 @@ class Game {
     }
     if(player.distance>displayHeight*5-100){
       gameState = 2;
-
+      player.rank += 1;
+      Player.updatecarsatend(player.rank);
+      player.update()
     }
     drawSprites();
   }
   end(){
     console.log("gameend")
+    console.log(player.rank)
   }
 }
 
