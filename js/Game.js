@@ -92,7 +92,14 @@ class Game {
       gameState = 2;
       player.rank += 1;
       Player.updatecarsatend(player.rank);
-      player.update()
+      player.update();
+      swal({
+        title:'rank: '+player.rank,
+        text:"GAMEEND",
+        imageUrl:"https://raw.githubusercontent.com/vishalgaddam873/p5-multiplayer-car-race-game/master/assets/cup.png",
+        imageSize:"100x100",
+        confirmButtonText:"OK"
+      })
     }
     drawSprites();
   }
